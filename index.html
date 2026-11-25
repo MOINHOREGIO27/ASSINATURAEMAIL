@@ -448,13 +448,18 @@ function draw() {
     ctx.stroke();
 
     /* CONTATOS — coluna independente, perfeitamente alinhada */
-    const address = get("address");
-    const contacts = [
-        ["phone", get("phone")],
-        ["email", get("email")],
-        ["location", address],
-        ["web", get("website")]
-    ].filter(item => item[1]);
+   const address = get("address");
+const city = get("city");
+const cep = get("cep");
+
+const contacts = [
+    ["phone", get("phone")],
+    ["email", get("email")],
+    ["location", address],
+    ["location", city],
+    ["location", "CEP: " + cep],
+    ["web", get("website")]
+].filter(item => item[1]);
 
     const iconX = 1385;
     const textX = 1425;
