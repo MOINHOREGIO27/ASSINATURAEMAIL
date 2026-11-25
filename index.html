@@ -466,8 +466,11 @@ const contacts = [
 
     const iconX = 1385;
     const textX = 1425;
-    const firstY = 226;
-    const rowGap = 62;
+    const firstY = 170;
+    const rowGap = 50;
+
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
 
     contacts.forEach(([type, value], index) => {
         const y = firstY + index * rowGap;
@@ -494,7 +497,7 @@ const contacts = [
 
     /* SELO — canto inferior direito, sem invadir os contactos */
     if (badge.complete && badge.naturalWidth > 0) {
-        const badgeH = 150;
+        const badgeH = 160;
         const badgeW = badgeH * (badge.naturalWidth / badge.naturalHeight);
         const badgeX = 2000 - badgeW - 26;
         const badgeY = 630 - badgeH - 18;
