@@ -448,16 +448,19 @@ function draw() {
     ctx.stroke();
 
     /* CONTATOS — coluna independente, perfeitamente alinhada */
-   const address = get("address");
+const address = get("address");
 const city = get("city");
 const cep = get("cep");
+
+const addressWithCep = [address, cep ? "CEP: " + cep : ""]
+    .filter(Boolean)
+    .join(" - ");
 
 const contacts = [
     ["phone", get("phone")],
     ["email", get("email")],
-    ["location", address],
+    ["location", addressWithCep],
     ["location", city],
-    ["location", "CEP: " + cep],
     ["web", get("website")]
 ].filter(item => item[1]);
 
